@@ -64,7 +64,7 @@ public class Tracker {
             return false;
         }
         this.items[index] = null;
-        System.arraycopy(this.items, index, this.items, index + 1, this.size - index);
+        System.arraycopy(this.items, index + 1, this.items, index, this.size - 1 - index);
         this.items[this.size - 1] = null;
         this.size--;
         return true;
