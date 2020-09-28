@@ -77,4 +77,16 @@ public class Tracker {
         this.items[index].setId(id);
         return true;
     }
+
+    public boolean delete(int id) {
+        int index = indexOf(id);
+        if (index == -1) {
+            return false;
+        }
+        this.items[index] = null;
+        System.arraycopy(this.items, index, this.items, index + 1, this.size - index);
+        this.items[this.size - 1] = null;
+        this.size--;
+        return true;
+    }
 }
