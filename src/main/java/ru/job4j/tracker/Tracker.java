@@ -28,7 +28,7 @@ public class Tracker {
         Item[] foundItems = new Item[this.size];
         int j = 0;
         for (int i = 0; i < this.size; i++) {
-            if (this.items[i].getName() != null && this.items[i].getName().equals(key)) {
+            if (this.items[i].getName().equals(key)) {
                 foundItems[j] = this.items[i];
                 j++;
             }

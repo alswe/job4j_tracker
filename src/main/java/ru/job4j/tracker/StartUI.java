@@ -11,7 +11,6 @@ public class StartUI {
         tracker.findById(2).setName("notebook");
         tracker.add(new Item());
         tracker.findById(3).setName("notebook");
-        tracker.add(new Item());
 
         System.out.println(tracker.findById(1).toString());
         System.out.println(Arrays.toString(tracker.findByName("notebook")));
