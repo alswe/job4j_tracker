@@ -13,18 +13,6 @@ public class Tracker {
         return item;
     }
 
-//    public Item findById(int id) {
-//        Item rsl = null;
-//        for (int index = 0; index < size; index++) {
-//            Item item = items[index];
-//            if (item.getId() == id) {
-//                rsl = item;
-//                break;
-//            }
-//        }
-//        return rsl;
-//    }
-
     public Item findById(int id) {
         /* Находим индекс */
         int index = indexOf(id);
@@ -33,22 +21,14 @@ public class Tracker {
     }
 
     public Item[] findAll() {
-        Item[] itemsWithoutNull = new Item[this.size];
-        int j = 0;
-        for (int i = 0; i < this.items.length; i++) {
-            if (this.items[i] != null) {
-                itemsWithoutNull[j] = this.items[i];
-                j++;
-            }
-        }
-        return itemsWithoutNull;
+        return Arrays.copyOf(this.items, this.size);
     }
 
     public Item[] findByName(String key) {
         Item[] foundItems = new Item[this.size];
         int j = 0;
-        for (int i = 0; i < this.items.length; i++) {
-            if (this.items[i] != null && this.items[i].getName() != null && this.items[i].getName().equals(key)) {
+        for (int i = 0; i < this.size; i++) {
+            if (this.items[i].getName() != null && this.items[i].getName().equals(key)) {
                 foundItems[j] = this.items[i];
                 j++;
             }
