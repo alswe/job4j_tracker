@@ -14,13 +14,13 @@ public class EditAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        System.out.println("=== Editing an item ===");
+        out.println("=== Editing an item ===");
         int id = Integer.parseInt(input.askStr("Write id of the item to edit: "));
         Item item = new Item(input.askStr("Write new name of the item: "));
         if (tracker.replace(id, item)) {
-            System.out.println("The item has been edited");
+            out.println("The item has been edited");
         } else {
-            System.out.println("Something went wrong. The item could not been edited");
+            out.println("Something went wrong. The item could not been edited");
         }
         return true;
     }

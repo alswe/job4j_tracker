@@ -14,14 +14,14 @@ public class ShowAllAction implements UserAction{
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        System.out.println("=== Showing all the items ===");
+        out.println("=== Showing all the items ===");
         Item[] items = tracker.findAll();
         if (items.length > 0) {
             for (Item item : items) {
-                System.out.println(item);
+                out.println(item);
             }
         } else {
-            System.out.println("Base is empty");
+            out.println("Base is empty");
         }
         return true;
     }
