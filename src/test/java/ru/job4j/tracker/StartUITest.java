@@ -2,13 +2,11 @@ package ru.job4j.tracker;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.nullValue;
-
 
 public class StartUITest {
     @Test
@@ -52,9 +50,9 @@ public class StartUITest {
         List<UserAction> actions = List.of(new ExitAction(out));
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() +
-                        "0. Exit Program" + System.lineSeparator() +
-                        "=== Exiting the program ===" + System.lineSeparator()));
+                "Menu." + System.lineSeparator() + "0. Exit Program"
+                        + System.lineSeparator() + "=== Exiting the program ==="
+                        + System.lineSeparator()));
     }
 
     @Test
@@ -67,16 +65,16 @@ public class StartUITest {
         List<UserAction> actions = List.of(new ShowAllAction(out), new ExitAction(out));
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() +
-                        "0. Show all items" + System.lineSeparator() +
-                        "1. Exit Program" + System.lineSeparator() +
-                        "=== Showing all the items ===" + System.lineSeparator() +
-                        "id = 1, name = Item 1" + System.lineSeparator() +
-                        "id = 2, name = Item 2" + System.lineSeparator() +
-                        "Menu." + System.lineSeparator() +
-                        "0. Show all items" + System.lineSeparator() +
-                        "1. Exit Program" + System.lineSeparator() +
-                        "=== Exiting the program ===" + System.lineSeparator()));
+                "Menu." + System.lineSeparator()
+                        + "0. Show all items" + System.lineSeparator()
+                        + "1. Exit Program" + System.lineSeparator()
+                        + "=== Showing all the items ===" + System.lineSeparator()
+                        + "id = 1, name = Item 1" + System.lineSeparator()
+                        + "id = 2, name = Item 2" + System.lineSeparator()
+                        + "Menu." + System.lineSeparator()
+                        + "0. Show all items" + System.lineSeparator()
+                        + "1. Exit Program" + System.lineSeparator()
+                        + "=== Exiting the program ===" + System.lineSeparator()));
     }
 
     @Test
@@ -89,15 +87,15 @@ public class StartUITest {
         List<UserAction> actions = List.of(new FindByIdAction(out), new ExitAction(out));
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() +
-                        "0. Find item by Id" + System.lineSeparator() +
-                        "1. Exit Program" + System.lineSeparator() +
-                        "=== Looking for an item by id ===" + System.lineSeparator() +
-                        "id = 1, name = Item 1" + System.lineSeparator() +
-                        "Menu." + System.lineSeparator() +
-                        "0. Find item by Id" + System.lineSeparator() +
-                        "1. Exit Program" + System.lineSeparator() +
-                        "=== Exiting the program ===" + System.lineSeparator()));
+                "Menu." + System.lineSeparator()
+                        + "0. Find item by Id" + System.lineSeparator()
+                        + "1. Exit Program" + System.lineSeparator()
+                        + "=== Looking for an item by id ===" + System.lineSeparator()
+                        + "id = 1, name = Item 1" + System.lineSeparator()
+                        + "Menu." + System.lineSeparator()
+                        + "0. Find item by Id" + System.lineSeparator()
+                        + "1. Exit Program" + System.lineSeparator()
+                        + "=== Exiting the program ===" + System.lineSeparator()));
     }
 
     @Test
@@ -111,16 +109,16 @@ public class StartUITest {
         List<UserAction> actions = List.of(new FindByNameAction(out), new ExitAction(out));
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() +
-                        "0. Find items by name" + System.lineSeparator() +
-                        "1. Exit Program" + System.lineSeparator() +
-                        "=== Looking for an item by name ===" + System.lineSeparator() +
-                        "id = 1, name = Item 1" + System.lineSeparator() +
-                        "id = 2, name = Item 1" + System.lineSeparator() +
-                        "Menu." + System.lineSeparator() +
-                        "0. Find items by name" + System.lineSeparator() +
-                        "1. Exit Program" + System.lineSeparator() +
-                        "=== Exiting the program ===" + System.lineSeparator()));
+                "Menu." + System.lineSeparator()
+                        + "0. Find items by name" + System.lineSeparator()
+                        + "1. Exit Program" + System.lineSeparator()
+                        + "=== Looking for an item by name ===" + System.lineSeparator()
+                        + "id = 1, name = Item 1" + System.lineSeparator()
+                        + "id = 2, name = Item 1" + System.lineSeparator()
+                        + "Menu." + System.lineSeparator()
+                        + "0. Find items by name" + System.lineSeparator()
+                        + "1. Exit Program" + System.lineSeparator()
+                        + "=== Exiting the program ===" + System.lineSeparator()));
     }
 
     @Test
@@ -131,11 +129,11 @@ public class StartUITest {
         List<UserAction> actions = List.of(new ExitAction(out));
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() +
-                        "0. Exit Program" + System.lineSeparator() +
-                        "Wrong input, you can select: 0 .. 0" + System.lineSeparator() +
-                        "Menu." + System.lineSeparator() +
-                        "0. Exit Program" + System.lineSeparator() +
-                        "=== Exiting the program ===" + System.lineSeparator()));
+                "Menu." + System.lineSeparator()
+                        + "0. Exit Program" + System.lineSeparator()
+                        + "Wrong input, you can select: 0 .. 0" + System.lineSeparator()
+                        + "Menu." + System.lineSeparator()
+                        + "0. Exit Program" + System.lineSeparator()
+                        + "=== Exiting the program ===" + System.lineSeparator()));
     }
 }

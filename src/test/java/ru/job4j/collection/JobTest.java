@@ -10,7 +10,8 @@ import static org.junit.Assert.assertThat;
 public class JobTest {
     @Test
     public void whenCompatorByNameDescAndProrityDesc() {
-        Comparator<Job> cmpNamePriority = new JobComparatorNameDesc().thenComparing(new JobComparatorPriorityDesc());
+        Comparator<Job> cmpNamePriority
+                = new JobComparatorNameDesc().thenComparing(new JobComparatorPriorityDesc());
         int rsl = cmpNamePriority.compare(
                 new Job("B", 0),
                 new Job("A", 1)
@@ -20,7 +21,8 @@ public class JobTest {
 
     @Test
     public void whenCompatorByProrityDescAndNameDesc() {
-        Comparator<Job> cmpNamePriority = new JobComparatorPriorityDesc().thenComparing(new JobComparatorNameDesc());
+        Comparator<Job> cmpNamePriority
+                = new JobComparatorPriorityDesc().thenComparing(new JobComparatorNameDesc());
         int rsl = cmpNamePriority.compare(
                 new Job("B", 1),
                 new Job("A", 1)
@@ -30,7 +32,8 @@ public class JobTest {
 
     @Test
     public void whenCompatorByProrityDescAndNameAsc() {
-        Comparator<Job> cmpNamePriority = new JobComparatorPriorityDesc().thenComparing(new JobComparatorNameAsc());
+        Comparator<Job> cmpNamePriority
+                = new JobComparatorPriorityDesc().thenComparing(new JobComparatorNameAsc());
         int rsl = cmpNamePriority.compare(
                 new Job("B", 1),
                 new Job("A", 0)
@@ -40,7 +43,8 @@ public class JobTest {
 
     @Test
     public void whenCompatorByProrityAscAndNameAsc() {
-        Comparator<Job> cmpNamePriority = new JobComparatorPriorityAsc().thenComparing(new JobComparatorNameAsc());
+        Comparator<Job> cmpNamePriority
+                = new JobComparatorPriorityAsc().thenComparing(new JobComparatorNameAsc());
         int rsl = cmpNamePriority.compare(
                 new Job("B", 1),
                 new Job("B", 1)
