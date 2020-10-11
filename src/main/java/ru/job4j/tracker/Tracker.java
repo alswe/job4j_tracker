@@ -50,7 +50,7 @@ public class Tracker {
             return false;
         }
         this.items.set(index, item);
-        this.items.get(index).setId(id);
+        item.setId(id);
         return true;
     }
 
