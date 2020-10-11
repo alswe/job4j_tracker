@@ -8,15 +8,13 @@ public class ConvertList2Array {
         int[][] array = new int[rows][columns];
         int row = 0;
         int column = 0;
-        int listIndex = 0;
         for (Integer entry : list) {
             array[row][column] = entry;
             column++;
-            if ((listIndex + 1) % columns == 0) {
+            if (column == columns) {
                 column = 0;
                 row++;
             }
-            listIndex++;
         }
         return array;
     }
