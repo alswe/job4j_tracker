@@ -10,10 +10,10 @@ public class Article {
         List<String> lineAsList = new ArrayList<>(Arrays.asList(line.split(" ")));
         int count = 0;
         for (String word : lineAsList) {
-            if (uniqueOrigin.contains(word.toLowerCase())) {
-                count++;
+            if (!uniqueOrigin.contains(word.toLowerCase())) {
+                return false;
             }
         }
-        return count == lineAsList.size();
+        return true;
     }
 }
