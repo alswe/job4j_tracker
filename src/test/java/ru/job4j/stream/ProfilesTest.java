@@ -20,18 +20,19 @@ public class ProfilesTest {
         Profile profile4 = new Profile(new Address("Saint Petersburg", "Stachek Prospekt", 231, 13));
         Profile profile5 = new Profile(new Address("Moscow", "Leningradskoe Shosse", 323, 323));
         Profile profile6 = new Profile(new Address("Kaliningrad", "Lesnaya", 12, 33));
-        profiles = List.of(profile1, profile2, profile3, profile4, profile5, profile6);
+        Profile profile7 = new Profile(new Address("Kaliningrad", "Lesnaya", 12, 33));
+        profiles = List.of(profile1, profile2, profile3, profile4, profile5, profile6, profile7);
     }
 
     @Test
     public void profilesTest() {
-        String expected = List.of(new Address("Moscow", "Sadovaya", 2, 3),
-                new Address("Saint Petersburg", "Nevsky Prospect", 22, 31),
+        List<Address> expected = List.of(new Address("Kaliningrad", "Lesnaya", 12, 33),
+                new Address("Moscow", "Sadovaya", 2, 3),
                 new Address("Moscow", "Lenina", 23, 21),
-                new Address("Saint Petersburg", "Stachek Prospekt", 231, 13),
                 new Address("Moscow", "Leningradskoe Shosse", 323, 323),
-                new Address("Kaliningrad", "Lesnaya", 12, 33)).toString();
-        String rsl = Profiles.collect(profiles).toString();
+                new Address("Saint Petersburg", "Nevsky Prospect", 22, 31),
+                new Address("Saint Petersburg", "Stachek Prospekt", 231, 13));
+        List<Address> rsl = Profiles.collect(profiles);
         assertThat(rsl, is(expected));
     }
 }
