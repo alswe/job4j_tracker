@@ -29,10 +29,10 @@ public class BankService {
 //                return user;
 //            }
 //        }
-       List<User> filteredUser = users.keySet().stream()
+       return users.keySet().stream()
                .filter(user -> user.getPassport().equals(passport))
-               .collect(Collectors.toList());
-       return !filteredUser.isEmpty() ? filteredUser.get(0) : null;
+               .findFirst()
+               .orElse(null);
     }
 
     public Account findByRequisite(String passport, String requisite) {
@@ -44,10 +44,11 @@ public class BankService {
 //                    return account;
 //                }
 //            }
-            List<Account> filteredAccount = users.get(user).stream()
-                    .filter(account -> account.getRequisite().equals(requisite))
-                    .collect(Collectors.toList());
-            return !filteredAccount.isEmpty() ? filteredAccount.get(0) : null;
+            return users.get(user).stream()
+                    .filter(account -> account
+                            .getRequisite()
+                            .equals(requisite))
+                    .findFirst().orElse(null);
         }
         return null;
     }
