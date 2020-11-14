@@ -17,27 +17,25 @@ public class EasyStream {
     }
 
     public EasyStream map(Function<Integer, Integer> fun) {
+        List<Integer> mappedList = new ArrayList<>();
         if (!stream.isEmpty()) {
-            List<Integer> mappedList = new ArrayList<>();
             for (var element : stream) {
                 mappedList.add(fun.apply(element));
             }
-            return new EasyStream(mappedList);
         }
-        return null;
+        return new EasyStream(mappedList);
     }
 
     public EasyStream filter(Predicate<Integer> fun) {
+        List<Integer> filteredList = new ArrayList<>();
         if (!stream.isEmpty()) {
-            List<Integer> filteredList = new ArrayList<>();
             for (var element : stream) {
                 if (fun.test(element)) {
                     filteredList.add(element);
                 }
             }
-            return new EasyStream(filteredList);
         }
-        return null;
+        return new EasyStream(filteredList);
     }
 
     public List<Integer> collect() {
